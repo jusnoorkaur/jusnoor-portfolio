@@ -2,7 +2,7 @@ import React from "react";
 import About from "./components/About";
 import Projects from "./components/Projects";
 import Experience from "./components/Experience";
-import Skills from "./components/Skills";
+import Skills from "./components/Skills"; // merged version
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
 import "./index.css";
@@ -24,7 +24,7 @@ function App() {
         {/* Text Slide In Right */}
         <div className="md:w-1/2 text-center md:text-left animate-slide-in-right">
           <h1 className="text-4xl md:text-5xl font-bold mb-4 text-white">
-            Hi, I’m Jusnoor Kaur Sachdeva 
+            Hi, I’m Jusnoor Kaur Sachdeva
           </h1>
           <p className="text-lg text-gray-300 mb-6 leading-relaxed">
             A driven Computer Science graduate from the University of British Columbia with a deep passion
@@ -49,7 +49,7 @@ function App() {
           <a href="#about" className="hover:text-green-400 transition">About</a>
           <a href="#projects" className="hover:text-green-400 transition">Projects</a>
           <a href="#experience" className="hover:text-green-400 transition">Experience</a>
-          <a href="#skills" className="hover:text-green-400 transition">Skills</a>
+          <a href="#skills" className="hover:text-green-400 transition">Skills & Tech Stack</a>
           <a href="#contact" className="hover:text-green-400 transition">Contact</a>
         </div>
       </nav>
@@ -59,7 +59,7 @@ function App() {
         <About />
         <Projects />
         <Experience />
-        <Skills />
+        <Skills /> {/* merged Skills + Tech Stack */}
         <Contact />
       </main>
 

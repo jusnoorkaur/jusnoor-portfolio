@@ -5,6 +5,7 @@ import Experience from "./components/Experience";
 import Skills from "./components/Skills"; // merged version
 import Contact from "./components/Contact";
 import ScrollToTop from "./components/ScrollToTop";
+import { FaDownload } from "react-icons/fa"; // for the download button
 import "./index.css";
 
 function App() {
@@ -32,14 +33,29 @@ function App() {
             seeking exciting opportunities in software development and tech innovation where I can grow, collaborate,
             and contribute meaningfully to teams solving real-world problems.
           </p>
-          <a
-            href="/Resume_JusnoorKaur.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition"
-          >
-            View Resume
-          </a>
+
+          {/* Buttons container */}
+          <div className="flex justify-center md:justify-start space-x-4">
+            {/* View Resume */}
+            <a
+              href="/Resume_JusnoorKaurSachdeva.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition"
+            >
+              View Resume
+            </a>
+
+            {/* Download Resume */}
+            <a
+              href="/Resume_JusnoorKaurSachdeva.pdf"
+              download="JusnoorKaurSachdeva_Resume.pdf"
+              className="inline-block bg-green-500 hover:bg-green-600 text-white font-medium py-3 px-6 rounded-lg transition flex items-center space-x-2"
+            >
+              <FaDownload />
+              <span>Download Resume</span>
+            </a>
+          </div>
         </div>
       </section>
 

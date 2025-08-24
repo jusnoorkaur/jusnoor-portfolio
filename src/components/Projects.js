@@ -1,63 +1,92 @@
 // components/Projects.js
 import React from "react";
 
+const projects = [
+  {
+    title: "GradeFalcon – Optical Marking System",
+    description: [
+      "An AI-based web application that streamlines the grading process by scanning OMR sheets using OpenCV and image processing techniques.",
+      "Built with React, Node.js, Flask, PostgreSQL, and Docker.",
+      "Integrated analytics dashboard with visual insights for instructors.",
+    ],
+    tech: ["React", "Flask", "OpenCV", "PostgreSQL", "Docker"],
+  },
+  {
+    title: "AI-Powered Mental Health & Productivity Tracker",
+    description: [
+      "Designed a platform to help youth combat burnout and anxiety by tracking mood and productivity in real time.",
+      "Implemented AI-powered sentiment check-ins using chatbots and optional voice input.",
+      "Correlated mood with productivity and highlighted emotional cycles.",
+      "Built dashboards for weekly insights and personalized wellness recommendations.",
+      "Focused on privacy-first approach with user control over tracked data.",
+    ],
+    tech: [
+      "React / Streamlit",
+      "Node.js",
+      "Firebase",
+      "OpenAI GPT",
+      "HuggingFace Transformers",
+      "Plotly",
+    ],
+  },
+  {
+    title: "Multi-Stream Object Detection API",
+    description: [
+      "Developed a FastAPI-based system to manage multiple video streams for object detection.",
+      "Implemented endpoints to start, stop, and list streams with support for webcams or video files.",
+      "Integrated WebSockets for live streaming and real-time frame handling.",
+      "Extended the project with evaluation tasks: IoU calculation, precision/recall metrics, precision-recall curves, AP per class, and mAP across classes.",
+      "Compared detection performance across multiple YOLOv7 model sizes.",
+    ],
+    tech: ["Python", "FastAPI", "OpenCV", "YOLOv7", "WebSockets"],
+  },
+  {
+    title: "Personal Portfolio Website",
+    description: [
+      "A modern, responsive personal portfolio showcasing projects, skills, and experiences.",
+      "Built with React and Tailwind CSS, featuring smooth animations, reusable components, and a dark theme.",
+      "Continuously updated with new features and deployed for accessibility across devices.",
+    ],
+    tech: ["React", "Tailwind CSS", "Vite"],
+  },
+];
+
 const Projects = () => {
   return (
     <section id="projects" className="px-8 py-20 max-w-6xl mx-auto">
       <h2 className="text-3xl md:text-4xl font-bold text-center text-green-400 mb-10">
         Projects
       </h2>
-      <div className="space-y-12 text-left text-gray-300 leading-relaxed">
 
-        <div>
-          <h3 className="text-xl font-semibold text-white">GradeFalcon - Optical Marking System</h3>
-          <p>
-            An AI-based web application that streamlines the grading process by scanning OMR sheets
-            using OpenCV and image processing techniques. Built with React, Node.js, Flask, PostgreSQL, and Docker.
-            Integrated analytics dashboard with visual insights for instructors.
-          </p>
-          <p className="mt-2"><strong className="text-green-400">Tech Stack:</strong> React, Flask, OpenCV, PostgreSQL, Docker</p>
-        </div>
+      {/* Single-column layout */}
+      <div className="grid grid-cols-1 gap-8">
+        {projects.map((p, idx) => (
+          <article
+            key={idx}
+            className="group relative overflow-hidden rounded-2xl bg-gradient-to-br from-gray-800 to-gray-900 p-6 shadow-lg ring-1 ring-gray-700 transition-all hover:-translate-y-1 hover:shadow-2xl"
+          >
+            <div className="pointer-events-none absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity bg-gradient-to-tr from-green-500/10 via-transparent to-transparent" />
 
-        <div>
-          <h3 className="text-xl font-semibold text-white">Personal Portfolio Website</h3>
-          <p>
-            A dynamic, modern portfolio site built with Tailwind CSS and React, showcasing projects,
-            skills, and experience with smooth animations and responsive design. Tailored for hiring audiences.
-          </p>
-          <p className="mt-2"><strong className="text-green-400">Tech Stack:</strong> React, Tailwind CSS, Vite</p>
-        </div>
+            <h3 className="text-xl font-semibold text-white mb-3">{p.title}</h3>
 
-        <div>
-          <h3 className="text-xl font-semibold text-white">COSC 441 – Solving the Fat Finger Problem</h3>
-          <p>
-            Developed an HCI research project that proposed offset touch and magnification techniques 
-            to solve the "fat finger" problem in mobile touch interfaces. Conducted user studies, 
-            evaluated performance metrics, and demonstrated improved accuracy and usability.
-          </p>
-          <p className="mt-2"><strong className="text-green-400">Tech Stack:</strong> JavaScript, HTML/CSS, Android SDK, SPSS (data analysis)</p>
-        </div>
+            <ul className="list-disc list-inside space-y-2 text-gray-300 mb-4">
+              {p.description.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
 
-        <div>
-          <h3 className="text-xl font-semibold text-white">AI Resume Generator for UBC Job Board</h3>
-          <p>
-            Developed an AI-driven platform that assists students in generating tailored resumes for different job postings
-            by extracting keywords and job requirements. Built using GPT APIs and Node.js backend with frontend forms.
-          </p>
-          <p className="mt-2"><strong className="text-green-400">Tech Stack:</strong> Node.js, GPT-3 API, React, Express</p>
-        </div>
-
-        <div>
-          <h3 className="text-xl font-semibold text-white">COVID-19 Data Visualization Dashboard</h3>
-          <p>
-            Designed a dashboard to track COVID-19 cases using open APIs. Implemented interactive graphs 
-            using D3.js and Chart.js, with filtering options by country/region and trend predictions 
-            using regression models. Shared with classmates as part of a data visualization project 
-            for awareness and learning.
-          </p>
-          <p className="mt-2"><strong className="text-green-400">Tech Stack:</strong> React, D3.js, Chart.js, REST APIs</p>
-        </div>
-
+            <ul className="flex flex-wrap gap-2">
+              {p.tech.map((t, i) => (
+                <li
+                  key={i}
+                  className="text-xs uppercase tracking-wide bg-gray-700/60 text-gray-200 px-3 py-1 rounded-full"
+                >
+                  {t}
+                </li>
+              ))}
+            </ul>
+          </article>
+        ))}
       </div>
     </section>
   );
